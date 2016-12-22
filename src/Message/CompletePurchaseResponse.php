@@ -10,7 +10,7 @@ class CompletePurchaseResponse extends AbstractResponse
 {
     public function isSuccessful()
     {
-        return isset($this->data['message']) && $this->data['message'] == 'APPROVED*';
+        return isset($this->data['result']) && $this->data['result'] === '1';
     }
 
     public function getTransactionReference()

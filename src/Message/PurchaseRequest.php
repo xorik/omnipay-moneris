@@ -10,12 +10,11 @@ class PurchaseRequest extends AbstractRequest
 
     public function getData()
     {
-        $this->validate('amount', 'returnUrl');
+        $this->validate('amount');
 
         $data = array();
         $data['hpp_id'] = $this->getHppId();
         $data['hpp_key'] = $this->getHppKey();
-        $data['return_url'] = $this->getReturnUrl();
         $data['amount'] = $this->getAmount();
         $data['order_no'] = $this->getTransactionId();
 
